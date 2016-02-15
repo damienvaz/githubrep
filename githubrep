@@ -1,0 +1,8 @@
+#!/bin/bash
+mkdir $1
+cd $1
+curl -u 'damienvaz' https://api.github.com/user/repos -d "{\"name\":\"$1\"}";
+git init;
+#git remote add origin git@github.com:damienvaz/$1.git;
+git remote add origin https://github.com/damienvaz/$1.git;
+git push -u origin master
